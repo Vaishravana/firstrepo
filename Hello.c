@@ -5,8 +5,6 @@ int main(void)
    printf ("The push triggers jenkins run");
    printf("build trigger 2");
    printf("build trigger 3");
-   printf("build trigger 2");
-   printf("build trigger 3");
    printf("Finally!");
 
    return 0;
