@@ -6,6 +6,8 @@ int main(void)
    printf("build trigger 2");
    printf("build trigger 3");
    printf("build trigger 2");
+   printf("build trigger 3");
+   printf("Finally!");
 
    return 0;
 }
