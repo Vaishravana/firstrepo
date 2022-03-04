@@ -1,1 +1,1 @@
-print("FAIL")
+raise Exception("Failed")
