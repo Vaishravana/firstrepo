@@ -10,7 +10,7 @@ pipeline{
 		    steps{
 			    script{
 				    catchError {
-					    build job: 'dummy_repo2'		
+					    build job: 'dummy_repo'		
 				    }
 	            }
 		    }
@@ -44,7 +44,7 @@ pipeline{
 		    steps{
 				script{
 					catchError {
-					    build job: 'dummy_repo2'			
+					    build job: 'dummy_repo'			
 					}
 			    }
 		    }
@@ -55,7 +55,7 @@ pipeline{
                 failure {
                     script{
 					    try{
-						    build job: 'dummy_firmware_reload_failure'		
+						    build job: 'dummy_firmware_reload'		
 					    }
 					    catch(err){
 					        mail bcc: '', body: 'Just  do it.', cc: '', from: '', replyTo: '', subject: 'Reset the board now!!', to: 'vaishravana.s@gmail.com'
