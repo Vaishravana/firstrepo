@@ -10,7 +10,8 @@ pipeline{
 		    steps{
 			    script{
 				    catchError {
-					    build job: 'dummy_repo2'		
+					    build job: 'dummy_repo2'
+					    build job: 'dummy_repo2'
 				    }
 	            }
 		    }
