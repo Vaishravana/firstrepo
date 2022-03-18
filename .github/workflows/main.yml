@@ -1,4 +1,6 @@
 # This is a basic workflow to help you get started with Actions
+- name: Trigger Jenkins Job
+  uses: appleboy/jenkins-action@0.0.1
 
 name: my_test_flow
 
