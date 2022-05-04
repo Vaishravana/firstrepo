@@ -37,6 +37,7 @@ pipeline{
                 success {
 
                     echo "Test pass"
+		    setBuildStatus("Build pass", "SUCCESS");
                 }
                 failure {
                     script{
