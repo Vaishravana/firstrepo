@@ -45,7 +45,6 @@ pipeline{
 						    build job: 'dummy_firmware_reload'		
 					    }
 					    catch(err){
-					        mail bcc: '', body: 'Just  do it.', cc: '', from: '', replyTo: '', subject: 'Reset the board now!!', to: 'vaishravana.s@gmail.com'
                             error('Reset failed')
 				       }
 			        }
@@ -69,7 +68,6 @@ pipeline{
 						    build job: 'dummy_firmware_reload_failure'		
 					    }
 					    catch(err){
-					        mail bcc: '', body: 'Just  do it.', cc: '', from: '', replyTo: '', subject: 'Reset the board now!!', to: 'vaishravana.s@gmail.com'
 						setBuildStatus("Build failed", "FAILURE");
 
                             error('Reset failed')
