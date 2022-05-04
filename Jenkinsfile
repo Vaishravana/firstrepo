@@ -43,8 +43,8 @@ pipeline{
 		}
 		stage('async test 3'){
 		    steps{
-			    	cd test_dir
-				python3 test2.py --sum 1 2 3
+			    	sh '''cd test_dir
+				python3 test2.py --sum 1 2 3'''
 		    }
 		    post{
                 success {
