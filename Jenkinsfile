@@ -43,11 +43,8 @@ pipeline{
 		}
 		stage('async test 3'){
 		    steps{
-				script{
-					catchError {
-					    build job: 'dummy_repo2'			
-					}
-			    }
+			    	cd test_dir
+				python3 test2.py --sum 1 2 3
 		    }
 		    post{
                 success {
