@@ -2,7 +2,7 @@ void setBuildStatus(String message, String state) {
   step([
       $class: "GitHubCommitStatusSetter",
       reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/Vaishravana/firstrepo"],
-      contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "ci/jenkins/status"],
+      contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "continuous-integration/jenkins/pr-merge"],
       errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
       statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
   ]);
