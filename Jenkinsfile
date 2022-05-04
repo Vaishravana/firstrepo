@@ -1,3 +1,12 @@
+void setBuildStatus(String message, String state) {
+  step([
+      $class: "GitHubCommitStatusSetter",
+      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/Vaishravana/firstrepo"],
+      contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "continuous-integration/jenkins/pr-merge"],
+      errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
+      statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
+  ]);
+}
 pipeline{
     environment {
     async_test_number = 1
@@ -26,6 +35,7 @@ pipeline{
 		    }
 		    post{
                 success {
+
                     echo "Test pass"
                 }
                 failure {
@@ -49,6 +59,8 @@ pipeline{
 		    post{
                 success {
                     echo "Test pass"
+			
+	            setBuildStatus("Build succeeded", "SUCCESS");
                 }
                 failure {
                     script{
@@ -57,6 +69,8 @@ pipeline{
 					    }
 					    catch(err){
 					        mail bcc: '', body: 'Just  do it.', cc: '', from: '', replyTo: '', subject: 'Reset the board now!!', to: 'vaishravana.s@gmail.com'
+						setBuildStatus("Build failed", "FAILURE");
+
                             error('Reset failed')
 				       }
 			        }
