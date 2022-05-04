@@ -2,9 +2,10 @@ void setBuildStatus(String message, String state) {
   step([
       $class: "GitHubCommitStatusSetter",
       reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/Vaishravana/firstrepo"],
-      contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "continuous-integration/jenkins/pr-merge"],
+      contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "jenkins ci details"],
       errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
-      statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
+      statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ],
+      statusBackrefSource:[$class: "ManuallyEnteredBackrefSource", backref: "https://ignitarium.com/"]
   ]);
 }
 pipeline{
