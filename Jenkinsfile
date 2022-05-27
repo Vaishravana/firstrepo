@@ -29,7 +29,7 @@ pipeline{
 		    steps{
 				script{
 					catchError {
-					    build job: 'dummy_repo'			
+					    build job: 'dummy_repo2'			
 					}
 			    }
 		    }
@@ -65,7 +65,7 @@ pipeline{
                 failure {
                     script{
 					    try{
-						    build job: 'dummy_firmware_reload_failure'		
+						    build job: 'dummy_firmware_reload'		
 					    }
 					    catch(err){
 						setBuildStatus("Build failed", "FAILURE");
