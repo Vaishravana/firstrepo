@@ -19,5 +19,8 @@ int main(void)
    printf("The push triggers jenkinsrun 2");
               printf ("Hello from your first program!\n");
    printf("The push triggers jenkins run 2");
+      printf("The push triggers jenkinsrun 2");
+              printf ("Hello from your first program!\n");
+   printf("The push triggers jenkins run 2");
    return 0;
 }
