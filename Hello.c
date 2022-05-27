@@ -6,5 +6,9 @@ int main(void)
    printf ("The push triggers jenkins");
       printf ("The push triggers jenkins");
       printf ("The push triggers jenkins");
+         printf ("The push triggers jenkins");
+      printf ("The push triggers jenkins");
+         printf ("The push triggers jenkins");
+      printf ("The push triggers jenkins");
    return 0;
 }
