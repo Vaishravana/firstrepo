@@ -10,5 +10,8 @@ int main(void)
       printf ("The push triggers jenkins");
          printf ("The push triggers jenkins");
       printf ("The push triggers jenkins");
+   printf ("The push triggers jenkins run");
+      printf ("Hello from your first program!\n");
+   printf ("The push triggers jenkins run");
    return 0;
 }
